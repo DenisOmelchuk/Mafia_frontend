@@ -1,0 +1,497 @@
+:root {
+  --orange-color: rgba(250, 204, 21, 255);
+  --white-color: rgb(226 232 240);
+  --deavtive_btn: rgb(130, 130, 130);
+}
+.grey_input_field {
+  background-color: rgb(27, 27, 27);
+  font-family: "Noto Sans Lisu", sans-serif;
+}
+.grey_input_field::placeholder {
+  color: rgb(66, 66, 66);
+}
+
+html,
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(to bottom, #000000, rgb(113, 95, 28) 90%);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.create_page_container {
+  height: 100%;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.create_game_img_form_container {
+  display: flex;
+  width: 900px;
+  border-radius: 15px;
+  margin-left: 20%;
+  margin-top: 7%;
+  box-shadow: 0px 0px 100px 50px #000000;
+}
+
+.heisengerg_img {
+  height: 450px;
+  width: auto;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.form_container {
+  background-color: black;
+  min-width: 450px;
+  height: 450px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+/* Create & Join Game */
+.create_game_form_container_pararaph_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+.create_game_form_container_pararaph_create {
+  color: var(--orange-color);
+  font-family: "Noto Sans Lisu", sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  margin-left: 0px;
+  margin-top: 25px;
+  margin-right: 0px;
+}
+.create_game_form_container_pararaph_the_game {
+  color: var(--white-color);
+  font-family: "Noto Sans Lisu", sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  margin-top: 25px;
+  margin-left: 10px;
+}
+#create_game_info {
+  margin-bottom: 20px;
+}
+.create_game_btn_active {
+  width: 135px;
+  height: 40px;
+  background-color: var(--orange-color);
+  font-family: "Noto Sans Lisu", sans-serif;
+  border: none;
+  font-weight: 500;
+  font-size: 17px;
+  cursor: pointer;
+  border-radius: 15px;
+  margin-left: 105px;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.create_game_btn_active:hover {
+  background-color: #dab316;
+}
+.create_game_btn_deactive {
+  width: 135px;
+  height: 40px;
+  background-color: var(--deavtive_btn);
+  font-family: "Noto Sans Lisu", sans-serif;
+  border: none;
+  font-weight: 500;
+  font-size: 17px;
+  pointer-events: none;
+  cursor: not-allowed;
+  border-radius: 15px;
+  margin-left: 105px;
+  margin-right: 10px;
+}
+.create_game_form {
+  display: flex;
+}
+
+.num_of_players_input {
+  width: 90px;
+  height: 40px;
+  color: var(--white-color);
+  text-align: center;
+  border-radius: 5px;
+}
+
+.custom-hr {
+  position: relative;
+  height: 3px;
+  width: 260px;
+  border: 0;
+  margin-top: 26px;
+  margin-left: 95px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgb(226, 232, 240),
+    rgba(0, 0, 0, 0)
+  );
+}
+.info {
+  color: var(--white-color);
+  font-family: "Noto Sans Lisu", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  margin-left: 88px;
+}
+#gameID_info {
+  margin-top: 16px;
+}
+.create_game_paragraph_game_id {
+  margin-left: 20px;
+}
+.game_id_label {
+  color: var(--white-color);
+  font-family: "Noto Sans Lisu", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+}
+.game_id {
+  color: var(--orange-color);
+  font-family: "Noto Sans Lisu", sans-serif;
+  font-weight: 500;
+  font-size: 35px;
+  margin-left: 140px;
+  margin-top: 25px;
+}
+.copy_game_id_btn {
+  font-family: "Noto Sans Lisu", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  color: rgb(66, 66, 66);
+  background-color: rgb(27, 27, 27);
+  display: inline-block;
+  border-radius: 7px;
+  width: 80px;
+  margin-top: 10px;
+  margin-left: 185px;
+  height: 40px;
+  transition: background-color 0.3s ease;
+}
+.copy_game_id_btn:hover {
+  background-color: rgb(40, 40, 40);
+}
+.join_game_btn {
+  margin-top: 37px;
+  width: 135px;
+  height: 40px;
+  background-color: var(--orange-color);
+  font-family: "Noto Sans Lisu", sans-serif;
+  border: none;
+  font-weight: 500;
+  font-size: 17px;
+  cursor: pointer;
+  border-radius: 15px;
+  margin-left: 157.5px;
+  margin-right: 157.5px;
+  transition: background-color 0.3s ease;
+}
+#join_game_text{
+  margin-top: 10px;
+}
+
+.join_game_btn:hover {
+  background-color: #dab316;
+}
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin-left: 188px;
+  margin-top: 90px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #fff;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1.8s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.9s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  4.9% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  5% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+
+.custom-hr_join {
+  position: relative;
+  height: 3px;
+  width: 260px;
+  border: 0;
+  margin-top: 0px;
+  margin-left: 95px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgb(226, 232, 240),
+    rgba(0, 0, 0, 0)
+  );
+}
+.join_game_input {
+  margin-top: 50px;
+  margin-left: 130px;
+  border-radius: 15px;
+  height: 30px;
+  font-family: "Noto Sans Lisu", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  text-indent: 40px;
+}
+.join_game_input::placeholder {
+  color: black;
+}
+
+/* Login */
+.reg_log {
+  margin-top: 152px;
+}
+.custom-hr_register_login {
+  position: relative;
+  height: 3px;
+  width: 260px;
+  border: 0;
+  margin-top: 0px;
+  margin-left: 95px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgb(226, 232, 240),
+    rgba(0, 0, 0, 0)
+  );
+}
+.login_register_image_form_container {
+  background: linear-gradient(to right, rgb(27, 27, 27), rgb(46, 46, 46) 40%);
+  display: flex;
+  width: 900px;
+  border-radius: 15px;
+  margin-left: 20%;
+  margin-top: 7%;
+  box-shadow: 0px 0px 100px 50px #000000;
+}
+.register_login_container {
+  width: 350px;
+  height: 500px;
+  background-color: black;
+}
+.logo_image {
+  width: 150px;
+  height: auto;
+  margin-top: 90px;
+  margin-left: 650px;
+}
+.register_login_form_container {
+  display: block;
+  width: 300px;
+}
+.register_login_form {
+  display: inline-block;
+}
+
+.register_login_input {
+  width: 240px;
+  margin-top: 30px;
+  margin-left: 105px;
+  height: 40px;
+  border-radius: 7px;
+}
+.register_login_input::placeholder {
+  font-weight: 400;
+  font-size: 17px;
+  padding-left: 20px;
+  border-width: 3px;
+}
+.register_login_input:focus {
+  border: 1px dotted var(--orange-color);
+  outline: none;
+}
+.register_login_input:not(:placeholder-shown) {
+  font-family: "Noto Sans Lisu", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  padding-left: 20px;
+  color: var(--orange-color);
+}
+.register_login_img_input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.register_login_img_input + label {
+  font-family: "Noto Sans Lisu", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  color: rgb(66, 66, 66);
+  background-color: rgb(27, 27, 27);
+  display: inline-block;
+  border-radius: 7px;
+  width: 150px;
+  margin-top: 30px;
+  margin-left: 105px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+}
+
+.register_login_img_input:focus + label,
+.register_login_img_input + label:hover {
+  background-color: rgb(40, 40, 40);
+}
+.x_img {
+  height: 33px;
+  width: auto;
+  margin-top: 34px;
+  margin-left: 55px;
+}
+.check_mark_img {
+  height: 33px;
+  width: auto;
+  margin-top: 31px;
+  margin-left: 55px;
+}
+.register_login_img_input_container {
+  display: flex;
+}
+.register_login_btn_active {
+  width: 170px;
+  height: 40px;
+  background-color: var(--orange-color);
+  font-family: "Noto Sans Lisu", sans-serif;
+  border: none;
+  font-weight: 500;
+  font-size: 17px;
+  cursor: pointer;
+  border-radius: 15px;
+  margin-left: 140px;
+  margin-right: 140px;
+  margin-top: 45px;
+  transition: background-color 0.3s ease;
+}
+
+.register_login_btn_active:hover {
+  background-color: #dab316;
+}
+.register_login_btn_deactive {
+  width: 170px;
+  height: 40px;
+  background-color: rgb(27, 27, 27);
+  font-family: "Noto Sans Lisu", sans-serif;
+  border: none;
+  font-weight: 500;
+  font-size: 17px;
+  pointer-events: none;
+  cursor: not-allowed;
+  border-radius: 15px;
+  margin-left: 140px;
+  margin-right: 140px;
+  margin-top: 45px;
+  color: rgb(66, 66, 66);
+}
+#register_login_hr {
+  margin-bottom: 5px;
+}
+
+.register_login_img_input + label {
+  font-family: "Noto Sans Lisu", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  color: rgb(66, 66, 66);
+  background-color: rgb(27, 27, 27);
+  display: inline-block;
+  border-radius: 7px;
+  width: 150px;
+  margin-top: 30px;
+  margin-left: 105px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+}
+
+.register_login_img_input:focus + label,
+.register_login_img_input + label:hover {
+  background-color: rgb(40, 40, 40);
+}
+
+/* Video */
+.video_container {
+  margin-top: 0px;
+}
+.video_frame {
+  height: 200px;
+  width: 200px;
+}
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  grid-template-rows: repeat(3, 1fr); /* 3 rows */
+  gap: 10px;
+}
+.video_player_username {
+  position: relative;
+  top: 43px;
+  left: 10px;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: fit-content;
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 14px;
+}
+.video_player_13p {
+  width: 250px;
+  height: 220px;
+}
+.video_players_container {
+  width: 1030px;
+  height: 680;
+}
