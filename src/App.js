@@ -8,6 +8,7 @@ import { VideoRoom } from "./components/VideoRoom";
 import Room from "./pages/Room";
 import LoginPage from "./pages/LoginPage";
 import Registration from "./pages/Registration";
+import ProfilePage from "./pages/Profile"
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/join_game" element={<JoinGame />} />
         <Route path="/register" element={<Registration />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
         <Route path="/game" element={<VideoRoom />} />
         <Route path="/a" element={<Room />} />
       </Routes>

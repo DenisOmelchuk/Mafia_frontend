@@ -2,6 +2,8 @@
   --orange-color: rgba(250, 204, 21, 255);
   --white-color: rgb(226 232 240);
   --deavtive_btn: rgb(130, 130, 130);
+  --black_color: rgb(27, 27, 27);
+  --font: font-family: "Noto Sans Lisu", sans-serif;
 }
 .grey_input_field {
   background-color: rgb(27, 27, 27);
@@ -29,6 +31,9 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.sign_in_up_header{
+  margin-top: 20px;
 }
 .create_page_container {
   height: 100%;
@@ -131,6 +136,7 @@ code {
   border-radius: 5px;
 }
 
+
 .custom-hr {
   position: relative;
   height: 3px;
@@ -204,7 +210,7 @@ code {
   margin-right: 157.5px;
   transition: background-color 0.3s ease;
 }
-#join_game_text{
+#join_game_text {
   margin-top: 10px;
 }
 
@@ -334,6 +340,7 @@ code {
   display: inline-block;
 }
 
+
 .register_login_input {
   width: 240px;
   margin-top: 30px;
@@ -438,6 +445,7 @@ code {
 }
 #register_login_hr {
   margin-bottom: 5px;
+  margin-top: 10px;
 }
 
 .register_login_img_input + label {
@@ -494,4 +502,191 @@ code {
 .video_players_container {
   width: 1030px;
   height: 680;
+}
+
+
+/* Profile */
+.user_icon {
+  height: auto;
+  width: 49px;
+  margin-left: 25.5px;
+}
+.user_information_container {
+  margin-left: 56px;
+  margin-top: 25px;
+}
+.username_info_container {
+  display: flex;
+  height: 45px;
+  margin-top: 28px;
+}
+.username_input {
+  color: var(--white-color);
+  font-weight: 400;
+  font-size: 17px;
+  text-align: center;
+  border-radius: 7px;
+  margin-left: 45px;
+}
+#username_input_changed{
+  border: none; 
+  outline: 2.4px solid rgb(24, 160, 24); 
+  outline-offset: 1px; 
+}
+#username_input_unchanged{
+  border: none;
+}
+.user_image_info_container{
+  display: flex;
+  margin-top: 5px;
+}
+.user_image_profile_info_original{
+  height: 100px;
+  width: 100px;
+  border-radius: 70px;
+  border: none;
+}
+.user_image_profile_info_new{
+  height: 100px;
+  width: 100px;
+  border-radius: 70px;
+  border: none;
+  outline: 3.5px solid rgb(24, 160, 24);
+  outline-offset: 0px; 
+}
+.update_user_image_input {
+  width: 240px;
+  margin-top: 30px;
+  margin-left: 105px;
+  height: 40px;
+  border-radius: 7px;
+}
+.update_user_image_input::placeholder {
+  font-weight: 400;
+  font-size: 17px;
+  padding-left: 20px;
+  border-width: 3px;
+}
+.update_user_image_input:focus {
+  border: 1px dotted var(--orange-color);
+  outline: none;
+}
+.update_user_image_input:not(:placeholder-shown) {
+  font-family: "Noto Sans Lisu", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  padding-left: 20px;
+  color: var(--orange-color);
+}
+.update_user_image_input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.update_user_image_input + label {
+  font-family: "Noto Sans Lisu", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  color: var(--white-color);
+  background-color: rgb(27, 27, 27);
+  display: inline-block;
+  border-radius: 7px;
+  width: 172px;
+  margin-top: 30px;
+  margin-left: 45px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+}
+
+.update_user_image_input:focus + label,
+.update_user_image_input + label:hover {
+  background-color: rgb(40, 40, 40);
+}
+.profile_friends_container{
+  display: flex;
+  margin-top: 35px;
+}
+.profile_friends_btn{
+  background-color: var(--black_color);
+  height: 45px;
+  width: 132px;
+  margin-left: 55px;
+  font-size: 17px;
+  color: var(--white-color);
+  border-radius: 7px;
+  font-weight: 400;
+  font-family: "Noto Sans Lisu", sans-serif;
+  transition: background-color 0.3s ease;
+}
+.profile_friends_btn:hover{
+  background-color: rgb(40, 40, 40);
+}
+.profile_add_friend_btn{
+  background-color: var(--black_color);
+  border-radius: 7px;
+  height: 45px;
+  width: 45px;
+  margin-left: 19px;
+  transition: background-color 0.3s ease;
+}
+.profile_add_friend_btn:hover{
+  background-color: rgb(40, 40, 40);
+}
+.add_friends_icon{
+  height: 28.5px;
+  width: auto;
+  padding-left: 8.3px;
+}
+.friends_icon{
+  height: 40px;
+  width: auto;
+  margin-left: 26.5px;
+  margin-top: 3px;
+}
+.profile_btns_container{
+  display: flex;
+  margin-top: 35px;
+}
+.update_btn{
+  border-radius: 15px;
+  height: 45px;
+  width: 130px;
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: 17px;
+}
+.update_btn_active:hover {
+  background-color: #dab316;
+}
+.cancel_btn{
+  height: 35px;
+  width: auto;
+  margin-left: 70px;
+  margin-right: 35px;
+  margin-top: 5px;
+  border-radius: 50px;
+}
+.cancel_btn_icon{
+  height: 35px;
+  width: auto;
+}
+#cancel_btn_deactive{
+  pointer-events: none;
+  cursor: not-allowed;
+}
+#update_btn_deactive{
+  pointer-events: none;
+  cursor: not-allowed;
+  background-color: var(--deavtive_btn);
+}
+#update_btn_active{
+  background-color: var(--orange-color);
+  transition: background-color 0.3s ease;
+}
+#update_btn_active:hover {
+  background-color: #dab316;
 }
