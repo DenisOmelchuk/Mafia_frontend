@@ -25,7 +25,6 @@ export default function Register() {
       });
       localStorage.setItem("access", response.data.access);
       localStorage.setItem("refresh", response.data.refresh);
-      console.log(response.data);
     } catch (error) {
       console.error("Error:", error);
     }
@@ -73,11 +72,14 @@ export default function Register() {
             <img src={x_img} alt="" className="x_img" />
           )}
         </div>
-        <button form="register_form" className={
-                username !== "" && password !== "" && image !== null
-                  ? "register_login_btn_active"
-                  : "register_login_btn_deactive"
-              }>
+        <button
+          onClick={registerUser}
+          className={
+            username !== "" && password !== "" && image !== null
+              ? "register_login_btn_active"
+              : "register_login_btn_deactive"
+          }
+        >
           Register
         </button>
       </form>
