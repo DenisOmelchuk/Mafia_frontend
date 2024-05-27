@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { baseUrl } from "../shared";
-import RegisterLogin from "./RegisterLoginHeader";
-import RegisterLoginContainer from "./RegisterLoginContainer";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+
+  const navigate = useNavigate();
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -30,7 +32,7 @@ export default function Login() {
         if (data.access && data.refresh) {
           localStorage.setItem("access", data.access);
           localStorage.setItem("refresh", data.refresh);
-          console.log("Login successful:", data);
+          navigate('/create_game');
         } else {
           console.error("Login failed:", data);
         }

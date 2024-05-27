@@ -3,8 +3,12 @@ import { baseUrl } from "../shared";
 import axios from "axios";
 import x_img from "./x.png";
 import check_mark from "./check_mark.png";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
+
+  const navigate = useNavigate();
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [image, setImage] = useState(null);
@@ -23,8 +27,11 @@ export default function Register() {
           "Content-Type": "multipart/form-data",
         },
       });
-      localStorage.setItem("access", response.data.access);
-      localStorage.setItem("refresh", response.data.refresh);
+      if (response.status === 200) { 
+        localStorage.setItem("access", response.data.access);
+        localStorage.setItem("refresh", response.data.refresh);
+        navigate('/create_game');
+      }
     } catch (error) {
       console.error("Error:", error);
     }
