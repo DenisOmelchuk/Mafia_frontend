@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+// profile.js
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { baseUrl } from "../shared";
+import ProfileModal from "../components/ProfileModal";
 import img from "./Saul.png";
 import user_icon from "./user_icon.png";
 import cancel_icon_active from "./cancel_icon_active.png";
@@ -8,6 +10,8 @@ import cancel_icon_deactive from "./cancel_icon_deactive.png";
 import Header from "../components/Header";
 import friends_icon from "./friends_icon.png";
 import add_friends_icon from "./add_friends_icon.png";
+import go_back_icon_animated from "./go_back_icon_animated.gif";
+import go_back_icon_static from "./go_back_icon_static.png";
 import a from "./a.jpg";
 
 export default function Profile() {
@@ -17,6 +21,8 @@ export default function Profile() {
   const [temproraryImage, setTemproraryImage] = useState(null);
   const [temproraryImageFile, setTemproraryImageFile] = useState(null);
   const token = localStorage.getItem("access");
+
+  const modalRef = useRef();
 
   useEffect(() => {
     getUserData();
@@ -47,15 +53,15 @@ export default function Profile() {
     event.preventDefault();
     const url = baseUrl + "profile/update/";
     const formData = new FormData();
-  
+
     if (temproraryImage !== null) {
       formData.append("avatar", temproraryImageFile);
     }
-  
+
     if (temproraryUsername !== username) {
       formData.append("username", temproraryUsername);
     }
-  
+
     try {
       const response = await axios.put(url, formData, {
         headers: {
@@ -78,7 +84,7 @@ export default function Profile() {
 
   const handleFileInput = (e) => {
     const file = e.target.files[0];
-    setTemproraryImageFile(file)
+    setTemproraryImageFile(file);
     if (file) {
       const imageURL = URL.createObjectURL(file);
       setTemproraryImage(imageURL);
@@ -88,12 +94,41 @@ export default function Profile() {
   const cancelChanges = () => {
     setTemproraryImage(null);
     setTemproraryUsername(username);
-    setTemproraryImageFile(null)
+    setTemproraryImageFile(null);
+  };
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleHover = () => {
+    setIsHovered(!isHovered);
   };
 
   return (
     <>
       <Header />
+      <ProfileModal ref={modalRef}>
+        <button
+          onClick={() => modalRef.current.close()}
+          className="go_back_btn"
+        >
+          {isHovered ? (
+            <img
+              src={go_back_icon_animated}
+              alt=""
+              className="go_back_icon"
+              onMouseEnter={handleHover}
+              onMouseLeave={handleHover}
+            />
+          ) : (
+            <img
+              src={go_back_icon_static}
+              alt=""
+              className="go_back_icon"
+              onMouseEnter={handleHover}
+              onMouseLeave={handleHover}
+            />
+          )}
+        </button>
+      </ProfileModal>
       <div className="create_page_container">
         <div className="create_game_img_form_container">
           <img src={img} alt="" className="heisengerg_img" />
@@ -154,7 +189,12 @@ export default function Profile() {
               </div>
               <div className="profile_friends_container">
                 <img src={friends_icon} alt="" className="friends_icon" />
-                <button className="profile_friends_btn">See Friends</button>
+                <button
+                  className="profile_friends_btn"
+                  onClick={() => modalRef.current.open()}
+                >
+                  See Friends
+                </button>
                 <button className="profile_add_friend_btn">
                   <img
                     src={add_friends_icon}

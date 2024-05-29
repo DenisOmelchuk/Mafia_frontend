@@ -556,9 +556,9 @@ code {
 }
 .update_user_image_input {
   width: 240px;
+  height: 45px;
   margin-top: 30px;
   margin-left: 105px;
-  height: 40px;
   border-radius: 7px;
 }
 .update_user_image_input::placeholder {
@@ -689,4 +689,32 @@ code {
 }
 #update_btn_active:hover {
   background-color: #dab316;
+}
+.go_back_btn{
+  height: 30px;
+  width: auto;
+  margin-left: 415px;
+  margin-top: 5px;
+  display: block;
+}
+.go_back_icon{
+  height: 25px;
+  width: auto;
+}
+
+/* Modal */
+.modal {
+  width: 450px;
+  height: 450px;
+  background-color: #707070;
+  /* border-radius: 15px; */
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  margin-top: 152px;
+  margin-left: 750px;
+  position: relative;
+  /* margin-left: 304px; */
+  
+  /* width: 900px;  */
+  /* height: 451px; */
 }
