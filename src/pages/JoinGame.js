@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import img from "./Jessy.jpg";
 import Header from "../components/Header";
 
-export default function CreateGame() {
+export default function JoinGame() {
   return (
     <>
       <Header />
