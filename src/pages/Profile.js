@@ -1,4 +1,3 @@
-// profile.js
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { baseUrl } from "../shared";
@@ -10,14 +9,13 @@ import cancel_icon_deactive from "./cancel_icon_deactive.png";
 import Header from "../components/Header";
 import friends_icon from "./friends_icon.png";
 import add_friends_icon from "./add_friends_icon.png";
-import go_back_icon_animated from "./go_back_icon_animated.gif";
-import go_back_icon_static from "./go_back_icon_static.png";
-import a from "./a.jpg";
+import go_back_icon from "./go_back_icon.png";
+import FriendsList from "../components/FriendsList";
 
 export default function Profile() {
   const [username, setUsername] = useState("null");
   const [temproraryUsername, setTemproraryUsername] = useState("null");
-  const [image, setImage] = useState(a);
+  const [image, setImage] = useState(null);
   const [temproraryImage, setTemproraryImage] = useState(null);
   const [temproraryImageFile, setTemproraryImageFile] = useState(null);
   const token = localStorage.getItem("access");
@@ -96,38 +94,20 @@ export default function Profile() {
     setTemproraryUsername(username);
     setTemproraryImageFile(null);
   };
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleHover = () => {
-    setIsHovered(!isHovered);
-  };
 
   return (
     <>
       <Header />
       <ProfileModal ref={modalRef}>
-        <button
-          onClick={() => modalRef.current.close()}
-          className="go_back_btn"
-        >
-          {isHovered ? (
-            <img
-              src={go_back_icon_animated}
-              alt=""
-              className="go_back_icon"
-              onMouseEnter={handleHover}
-              onMouseLeave={handleHover}
-            />
-          ) : (
-            <img
-              src={go_back_icon_static}
-              alt=""
-              className="go_back_icon"
-              onMouseEnter={handleHover}
-              onMouseLeave={handleHover}
-            />
-          )}
-        </button>
+        <div>
+          <button
+            onClick={() => modalRef.current.close()}
+            className="go_back_btn"
+          >
+            <img src={go_back_icon} alt="" className="go_back_icon" />
+          </button>
+          <FriendsList></FriendsList>
+        </div>
       </ProfileModal>
       <div className="create_page_container">
         <div className="create_game_img_form_container">
@@ -206,27 +186,23 @@ export default function Profile() {
               <div className="profile_btns_container">
                 <button
                   className="cancel_btn"
+                  onClick={cancelChanges}
                   id={
                     temproraryUsername === username && temproraryImage === null
                       ? "cancel_btn_deactive"
                       : ""
                   }
                 >
-                  {temproraryUsername === username &&
-                  temproraryImage === null ? (
-                    <img
-                      src={cancel_icon_deactive}
-                      alt=""
-                      className="cancel_btn_icon"
-                    />
-                  ) : (
-                    <img
-                      src={cancel_icon_active}
-                      alt=""
-                      className="cancel_btn_icon"
-                      onClick={cancelChanges}
-                    />
-                  )}
+                  <img
+                    src={
+                      temproraryUsername === username &&
+                      temproraryImage === null
+                        ? cancel_icon_deactive
+                        : cancel_icon_active
+                    }
+                    alt="Cancel"
+                    className="cancel_btn_icon"
+                  />
                 </button>
                 <button
                   onClick={updateUserData}
