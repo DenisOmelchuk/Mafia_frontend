@@ -717,14 +717,14 @@ code {
 }
 
 /* Friends List Component */
-.friends_list_container {
+.profile_users_list_container {
   display: flex;
   flex-direction: column;
   margin-left: 40px;
   width: 370px;
 }
 
-.friends_list_item {
+.profile_users_list_item {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -732,14 +732,14 @@ code {
   border-bottom: 1px solid rgb(71, 71, 71);
 }
 
-.friends_list_user_image {
+.profile_users_list_user_image {
   height: 50px;
   width: 50px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.friends_list_username {
+.profile_users_list_username {
   flex-grow: 1;
   margin-left: 15px;
   font-family: var(--font);
@@ -747,13 +747,13 @@ code {
   font-size: 18px;
 }
 
-.delete_btn {
+.profile_users_list_button {
   background: none;
   border: none;
   cursor: pointer;
 }
 
-.delete_icon {
+.profile_users_list_button_icon {
   height: 30px;
   width: auto;
 }
@@ -768,4 +768,43 @@ code {
 }
 #offline{
   background-color: #4f4f4f;
+}
+/* Add Friends */
+.add_friends_container_icon{
+  height: 40px;
+  width: auto;
+  align-self: flex-start;  
+}
+#search_friends_icon{
+  height: 45px;
+  width: auto;
+  margin-top: 5px;
+}
+.add_friends_container_switch_btns{
+  height: 50px;
+  margin-left: 40px;
+  display: flex;
+
+}
+
+.search_users_input{
+  width: 200px;
+  height: 45px;
+  border-radius: 7px;
+  background-color: rgb(84, 84, 84);
+  font-family: var(--font);
+  font-size: 17px;
+  color: var(--white-color);
+  text-align: center;
+  margin-left: 120px;
+  margin-bottom: 17px;
+}
+.search_users_input::placeholder {
+  color: rgb(44, 44, 44);
+  text-align: center;
+  font-family: var(--font);
+  font-size: 17px;
+}
+.send_friend_request_icon{
+  height: 33px;
 }

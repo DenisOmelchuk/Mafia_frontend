@@ -54,12 +54,12 @@ export default function FriendsList() {
     if (friendsList) {
       for (let i = 0; i < friendsList.length; i++) {
         friendsElements.push(
-          <div key={i} className="friends_list_item">
+          <div key={i} className="profile_users_list_item">
             <div className="circle" id="offline"></div>
-            <img src={baseUrl + friendsList[i].avatar.substring(1)} alt={friendsList[i].username} className="friends_list_user_image" />
-            <p className="friends_list_username">{friendsList[i].username}</p>
-            <button className="delete_btn" onClick={() => deleteFriend(friendsList[i].username)}>
-              <img src={delete_icon} alt="Delete" className="delete_icon" />
+            <img src={baseUrl + friendsList[i].avatar.substring(1)} alt={friendsList[i].username} className="profile_users_list_user_image" />
+            <p className="profile_users_list_username">{friendsList[i].username}</p>
+            <button className="profile_users_list_button" onClick={() => deleteFriend(friendsList[i].username)}>
+              <img src={delete_icon} alt="Delete" className="profile_users_list_button_icon" />
             </button>
           </div>
         );
@@ -71,7 +71,7 @@ export default function FriendsList() {
   };
 
   return (
-    <div className="friends_list_container">
+    <div className="profile_users_list_container">
       {renderFriendsList()}
     </div>
   );

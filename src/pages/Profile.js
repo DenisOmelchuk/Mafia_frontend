@@ -11,6 +11,7 @@ import friends_icon from "./friends_icon.png";
 import add_friends_icon from "./add_friends_icon.png";
 import go_back_icon from "./go_back_icon.png";
 import FriendsList from "../components/FriendsList";
+import AddFriends from "../components/AddFriends";
 
 export default function Profile() {
   const [username, setUsername] = useState("null");
@@ -19,8 +20,8 @@ export default function Profile() {
   const [temproraryImage, setTemproraryImage] = useState(null);
   const [temproraryImageFile, setTemproraryImageFile] = useState(null);
   const token = localStorage.getItem("access");
-
   const modalRef = useRef();
+  const [modalContain, setModalContain] = useState(null);
 
   useEffect(() => {
     getUserData();
@@ -106,13 +107,18 @@ export default function Profile() {
           >
             <img src={go_back_icon} alt="" className="go_back_icon" />
           </button>
-          <FriendsList></FriendsList>
+          {(() => {
+            if (modalContain === "FriendsList") {
+              return <FriendsList />;
+            } else if (modalContain === "AddFriends") {
+              return <AddFriends />;
+            }
+          })()}
         </div>
       </ProfileModal>
       <div className="create_page_container">
         <div className="create_game_img_form_container">
           <img src={img} alt="" className="heisengerg_img" />
-
           <div className="form_container">
             <div className="create_game_form_container_pararaph_container">
               <p>
@@ -140,7 +146,6 @@ export default function Profile() {
                     className="user_image_profile_info_new"
                   />
                 )}
-
                 <input
                   type="file"
                   name="image"
@@ -171,7 +176,10 @@ export default function Profile() {
                 <img src={friends_icon} alt="" className="friends_icon" />
                 <button
                   className="profile_friends_btn"
-                  onClick={() => modalRef.current.open()}
+                  onClick={() => {
+                    modalRef.current.open();
+                    setModalContain("FriendsList");
+                  }}
                 >
                   See Friends
                 </button>
@@ -180,6 +188,10 @@ export default function Profile() {
                     src={add_friends_icon}
                     alt=""
                     className="add_friends_icon"
+                    onClick={() => {
+                      modalRef.current.open();
+                      setModalContain("AddFriends");
+                    }}
                   />
                 </button>
               </div>
