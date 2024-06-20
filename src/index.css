@@ -3,7 +3,7 @@
   --white-color: rgb(226 232 240);
   --deavtive_btn: rgb(130, 130, 130);
   --black_color: rgb(27, 27, 27);
-  --font: font-family: "Noto Sans Lisu", sans-serif;
+  --font: "Noto Sans Lisu", sans-serif;
 }
 .grey_input_field {
   background-color: rgb(27, 27, 27);
@@ -25,8 +25,17 @@ body {
   overflow: hidden;
 }
 
-body {
+/* body {
+  background: linear-gradient(to bottom, #000000, rgb(59, 82, 81) 90%);
+} */
+/* body {
+  background: linear-gradient(to bottom, #000000, rgb(121, 32, 32) 90%);
+} */
+/* body {
   background: linear-gradient(to bottom, #000000, rgb(113, 95, 28) 90%);
+}  */
+body {
+  background: linear-gradient(to bottom, #000000, rgb(90, 78, 33) 90%);
 }
 
 code {
@@ -41,6 +50,251 @@ code {
   width: 100%;
   margin-top: 20px;
 }
+/* Header */
+.notification_icon{
+  height: 30px;
+  width: auto;
+  margin-left: 0px;
+  transition: opacity 0.3s ease;
+}
+.notification_icon:hover{
+  opacity: 0.8;
+}
+.notification_div {
+  position: relative;
+  display: inline-block;
+  width: 35px;
+  margin-left: 1075px;
+}
+.notifications_margin_div_top{
+  width: 300px;
+  height: 20px;
+}
+/* Style the dropdown content (hidden by default) */
+.notification-conteiner {
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  width: 300px;
+  max-width: 300px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+  margin-left: -266px;
+  border-radius: 15px;
+}
+.notification_content{
+  background-color: rgb(17, 17, 17);
+  border-radius: 15px;
+  max-height: 600px; 
+  overflow-y: auto; 
+}
+.notification_user_game_players_expected{
+  align-self: center;
+  font-size: 17px;
+  color: var(--white-color);
+  margin-right: 16px;
+}
+.notification_user_game_players_current{
+  align-self: center;
+  font-size: 17px;
+  color: var(--orange-color);
+  margin-right: 8px;
+}
+.notification_game_info{
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  margin-top: 10px;
+  justify-content: flex-end;
+}
+.notification_game_btn_container{
+  display: flex;
+  margin-bottom: 10px;
+}
+.notification_game_cancel_btn{
+  height: 29px;
+  width: 29px;
+  margin-left: 18px;
+  margin-right: 16px;
+}
+.notification_game_invite{
+  width: 70px;
+  height: 29px;
+  background-color: #3fa160;
+  border-radius: 7px;
+  margin-left: 18px;
+  font-family: var(--font);
+  font-size: 17px;
+  transition: opacity 0.3s ease;
+}
+.notification_game_invite:hover{
+  opacity: 0.8;
+}
+.notification_game_cancel_icon{
+  height: 29px;
+  width: auto;
+  transition: opacity 0.3s ease;
+}
+.notification_game_cancel_icon:hover {
+  opacity: 0.8;
+}
+.notification_game_join{
+  background-color: var(--orange-color);
+  width: 70px;
+  height: 29px;
+  margin-left: 79px;
+  border-radius: 7px;
+  font-family: var(--font);
+  font-size: 17px;
+  transition: opacity 0.3s ease;
+}
+.notification_game_join:hover{
+  opacity: 0.8;
+}
+.notification_margin_div_end{
+  height:3px;
+}
+.notifications_user_separation_hr{
+  width: 270px;
+  margin-left: 15px;
+  border-color: #414141;
+  height: 1px;
+  margin-top: 1.5px;
+  margin-bottom: 1.5px;
+}
+.b{
+  color: white;
+}
+.notifications_hr{
+  width: 250px;
+  margin-left: 25px;
+  height: 1.5px;
+  border: 0;
+  margin-top: 3px;
+  margin-bottom: 10px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgb(226, 232, 240),
+    rgba(0, 0, 0, 0)
+  );
+}
+.notification_type_paragraph{
+  color: var(--orange-color);
+  font-family: "Noto Sans Lisu", sans-serif;
+  font-size: 20px;
+  margin-left: 75px;
+  margin-top: 10px;
+}
+#notif_friends_requests_paragraph{
+  margin-top: 15px;
+}
+.notification_frnds_btn{
+  height: 29px;
+  width: 29px;
+  border-radius: 50px;
+  align-self: center;
+}
+#notif_frnds_accept_btn{
+  margin-right: 18px;
+}
+#notif_frnds_dnt_accept_btn{
+  margin-right: 16px;
+}
+.notification_friends_icon{
+  height: 29px;
+  width: 29px;
+  transition: opacity 0.3s ease;
+}
+.notification_friends_icon:hover{
+  opacity: 0.8;
+}
+
+/* Hide the scrollbar */
+.notification_content::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.notification_content {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.notification_content::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+.notification_list {
+  display: flex;
+  flex-direction: column; /* Stack the images vertically */
+}
+
+/* Style the links inside the dropdown */
+.notification-conteiner a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+/* Change color of links on hover */
+.notification-conteiner a:hover {
+  background-color: transparent;
+}
+
+/* Show the dropdown content when hovering over the container */
+.notification_div:hover .notification-conteiner {
+  display: block;
+}
+.notification_user_img{
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  margin-left: 16px;
+  align-self: center;
+  object-fit: cover;
+}
+
+/* redo */
+.notification_userbox_container{
+  display: block;
+}
+.notification_userbox{
+  margin-top: 0px;
+  display: flex;
+  flex-direction: row;
+  max-width: 300px;
+}
+#notification_userbox_game{
+  min-height: 50px;
+  margin-top: 10px;
+}
+#notification_userbox_friend{
+  min-height: 60px;
+}
+.notification_userbox_user_info_container{
+  display: flex;
+  flex-direction: row;
+  width: 204px;
+}
+.notification_userbox_second_container{
+  display: flex;
+  flex-direction: row;
+  width: 96px;
+  /* margin-top: 10px; */
+  justify-content: flex-end;
+}
+.notification_game_content{
+  display: block;
+}
+.notification_user_username{
+  margin-left: 14px;
+  font-family: "Noto Sans Lisu", sans-serif;
+  font-size: 16px;
+  color: var(--white-color);
+  align-self: center;
+}
+
+/*  */
 
 .create_game_img_form_container {
   display: flex;
@@ -48,7 +302,8 @@ code {
   border-radius: 15px;
   margin-left: 20%;
   margin-top: 7%;
-  box-shadow: 0px 0px 100px 50px #000000;
+  position: relative;
+  box-shadow: 0px -0px 100px 50px #000000;
 }
 
 .heisengerg_img {
@@ -57,7 +312,6 @@ code {
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
 }
-
 .form_container {
   background-color: black;
   min-width: 450px;
@@ -105,11 +359,10 @@ code {
   border-radius: 15px;
   margin-left: 105px;
   margin-right: 10px;
-  transition: background-color 0.3s ease;
+  transition: opacity 0.3s ease;
 }
-
 .create_game_btn_active:hover {
-  background-color: #dab316;
+  opacity: 0.8;
 }
 .create_game_btn_deactive {
   width: 135px;
@@ -128,7 +381,6 @@ code {
 .create_game_form {
   display: flex;
 }
-
 .num_of_players_input {
   width: 90px;
   height: 40px;
@@ -136,8 +388,6 @@ code {
   text-align: center;
   border-radius: 5px;
 }
-
-
 .custom-hr {
   position: relative;
   height: 3px;
@@ -209,14 +459,14 @@ code {
   border-radius: 15px;
   margin-left: 157.5px;
   margin-right: 157.5px;
-  transition: background-color 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 #join_game_text {
   margin-top: 10px;
 }
 
 .join_game_btn:hover {
-  background-color: #dab316;
+  opacity: 0.8;
 }
 .lds-ripple {
   display: inline-block;
@@ -340,8 +590,6 @@ code {
 .register_login_form {
   display: inline-block;
 }
-
-
 .register_login_input {
   width: 240px;
   margin-top: 30px;
@@ -422,11 +670,11 @@ code {
   margin-left: 140px;
   margin-right: 140px;
   margin-top: 45px;
-  transition: background-color 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .register_login_btn_active:hover {
-  background-color: #dab316;
+  opacity: 0.8;
 }
 .register_login_btn_deactive {
   width: 170px;
@@ -546,6 +794,7 @@ code {
   width: 100px;
   border-radius: 70px;
   border: none;
+  object-fit: cover;
 }
 .user_image_profile_info_new{
   height: 100px;
@@ -554,30 +803,7 @@ code {
   border: none;
   outline: 3.5px solid rgb(24, 160, 24);
   outline-offset: 0px; 
-}
-.update_user_image_input {
-  width: 240px;
-  height: 45px;
-  margin-top: 30px;
-  margin-left: 105px;
-  border-radius: 7px;
-}
-.update_user_image_input::placeholder {
-  font-weight: 400;
-  font-size: 17px;
-  padding-left: 20px;
-  border-width: 3px;
-}
-.update_user_image_input:focus {
-  border: 1px dotted var(--orange-color);
-  outline: none;
-}
-.update_user_image_input:not(:placeholder-shown) {
-  font-family: "Noto Sans Lisu", sans-serif;
-  font-weight: 400;
-  font-size: 17px;
-  padding-left: 20px;
-  color: var(--orange-color);
+  object-fit: cover;
 }
 .update_user_image_input {
   width: 0.1px;
@@ -587,6 +813,7 @@ code {
   position: absolute;
   z-index: -1;
 }
+
 .update_user_image_input + label {
   font-family: "Noto Sans Lisu", sans-serif;
   font-weight: 400;
@@ -601,12 +828,14 @@ code {
   height: 40px;
   text-align: center;
   line-height: 40px;
+  transition: background-color 0.3s ease; /* Add transition property */
 }
 
 .update_user_image_input:focus + label,
 .update_user_image_input + label:hover {
   background-color: rgb(40, 40, 40);
 }
+
 .profile_friends_container{
   display: flex;
   margin-top: 35px;
@@ -656,12 +885,9 @@ code {
   border-radius: 15px;
   height: 45px;
   width: 130px;
-  font-family: var(--font);
+  font-family: "Noto Sans Lisu", sans-serif;
   font-weight: 400;
   font-size: 17px;
-}
-.update_btn_active:hover {
-  background-color: #dab316;
 }
 .cancel_btn{
   height: 35px;
@@ -679,6 +905,12 @@ code {
   pointer-events: none;
   cursor: not-allowed;
 }
+#cancel_btn_active{
+  transition: opacity 0.3s ease;
+}
+#cancel_btn_active:hover{
+  opacity: 0.8;
+}
 #update_btn_deactive{
   pointer-events: none;
   cursor: not-allowed;
@@ -686,10 +918,10 @@ code {
 }
 #update_btn_active{
   background-color: var(--orange-color);
-  transition: background-color 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 #update_btn_active:hover {
-  background-color: #dab316;
+  opacity: 0.8;
 }
 .go_back_btn{
   height: 30px;
@@ -742,7 +974,7 @@ code {
 .profile_users_list_username {
   flex-grow: 1;
   margin-left: 15px;
-  font-family: var(--font);
+  font-family: "Noto Sans Lisu", sans-serif;
   font-weight: 400;
   font-size: 18px;
 }
@@ -756,6 +988,12 @@ code {
 .profile_users_list_button_icon {
   height: 30px;
   width: auto;
+  transition: filter 0.3s ease, opacity 0.3s ease; 
+}
+
+.profile_users_list_button_icon:hover {
+  opacity: 1;
+  filter: brightness(1.15); 
 }
 .circle {
   width: 17px;
@@ -792,7 +1030,7 @@ code {
   height: 45px;
   border-radius: 7px;
   background-color: rgb(84, 84, 84);
-  font-family: var(--font);
+  font-family: "Noto Sans Lisu", sans-serif;
   font-size: 17px;
   color: var(--white-color);
   text-align: center;
@@ -802,7 +1040,7 @@ code {
 .search_users_input::placeholder {
   color: rgb(44, 44, 44);
   text-align: center;
-  font-family: var(--font);
+  font-family: "Noto Sans Lisu", sans-serif;
   font-size: 17px;
 }
 .send_friend_request_icon{

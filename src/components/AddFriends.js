@@ -40,10 +40,10 @@ export default function SearchUsername() {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
-          }
+          },
         }
       );
-  
+
       if (response.status === 200) {
         setUsersList(usersList.filter((user) => user.username !== username));
         console.log("Friend request sent");
@@ -52,7 +52,6 @@ export default function SearchUsername() {
       console.error("Error:", error);
     }
   };
-  
 
   useEffect(() => {
     if (username) {
@@ -72,8 +71,13 @@ export default function SearchUsername() {
               alt={usersList[i].username}
               className="profile_users_list_user_image"
             />
-            <p className="profile_users_list_username">{usersList[i].username}</p>
-            <button className="profile_users_list_button" onClick={() => send_friend_request(usersList[i].username)}>
+            <p className="profile_users_list_username">
+              {usersList[i].username}
+            </p>
+            <button
+              className="profile_users_list_button"
+              onClick={() => send_friend_request(usersList[i].username)}
+            >
               <img
                 src={send_friend_request_icon}
                 alt="Send Friend Request"

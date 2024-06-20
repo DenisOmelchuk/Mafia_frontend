@@ -202,7 +202,7 @@ export default function Profile() {
                   id={
                     temproraryUsername === username && temproraryImage === null
                       ? "cancel_btn_deactive"
-                      : ""
+                      : "cancel_btn_active"
                   }
                 >
                   <img
